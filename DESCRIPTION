@@ -1,0 +1,30 @@
+Package: readTDMS
+Title: R-based TDMS file format reader and analyzer
+Version: 0.0.0.9000
+Authors@R: 
+    person("Abhishek", "Hanchate", , "abhishek.hanchate@tamu.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Not a lot of attention or consideration is given to data storage options at forefront of application
+planning and data storage. Decisions are often made arbitrarily on an as-needed, per-application basis
+without much thought to reusability, scalability, and recyclability or reproducibility, which leads to
+tedious and costly software rearchitecture. Given that applications and requirements change over
+time, even the most popular file storing formats quickly fall short of meeting the demands of
+engineers and scientists storing time-based measurement data. An NI TDMS (National Instruments
+Technical Data Management Streaming) file format is used for saving well-documented measurement
+data which is stored in the most efficient, organized, and scalable fashion to disk. Given the fairly
+complex binary format, these files are often difficult to directly read in R. This package lets us test the
+use of R for data processing requirements without changing anything with the data acquisition
+process. Also, having this direct reading process assists in reducing barriers to others trying to use R
+for such a purpose. In this package, I plan to implement a set of functions that can assist in directly
+reading a given TDMS file in R. I will also work on converting the same into more R and Python friendly
+formats such as a time series or CSV and perform subsequent analyses. If time permits, I also plan to
+implement functions to calculate and develop various metrics associated with the data to analyze it. I
+will also include any required plotting functions for visual inspection of our metrics and original data.
+In my package, the input would be a TDMS file and a set of input parameters to determine what
+metrics are desired while my potential output would be converted file, desired metrics, and graphical
+illustrations of the same. What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
