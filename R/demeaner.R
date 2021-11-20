@@ -7,6 +7,6 @@ demeaner <- function(datastream){
     stop(paste("The provided data stream cannot be demeaned since it is not a vector"))
   }
   # Demeaning the Data Stream
-  demeaned_datastream = datastream - mean(datastream)
+  demeaned_datastream <- datastream - mean(datastream)
   return(demeaned_datastream)
 }

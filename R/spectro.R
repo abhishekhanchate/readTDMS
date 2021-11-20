@@ -12,17 +12,17 @@ spectro <- function(x, n, Fs, window, overlap, dbON){
   # Generate Spectrogram
   spec <- specgram(x = snd, n = nfft, Fs = fs, window = window, overlap = overlap)
   # Get rid of Phase Information
-  P = abs(spec$S)
+  P <- abs(spec$S)
   # Normalize
-  P = P/max(P)
+  P <- P/max(P)
   # Convert to dB if dbON = 1 and Ignore if dbON = 0
   if (dbON == 1){
-    P = 10*log10(P)
+    P <- 10*log10(P)
   }
   # Config the Time Axis
-  t = spec$t
+  t <- spec$t
   # Config the Frequency Axis
-  f = spec$f
+  f <- spec$f
   # Plot the Spectrogram
   img = imagep(x = t,
                y = f,
