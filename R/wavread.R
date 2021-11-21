@@ -1,5 +1,5 @@
-# Data Stream (.wav Format) Reading and Plotting Function - 20th Nov 2021 - Version 1
-# Reading and Manipulating .wav foles Functions
+# Data Stream (.wav Format) Reading Function - 20th Nov 2021 - Version 1
+# Reading and Manipulating .wav files Functions
 library(tuneR, warn.conflicts = F, quietly = T)
 # Define Path to Audio File
 file_input <- '~/D/Fall 2021 Courses/STAT600_STAT_Comp/example.wav'
