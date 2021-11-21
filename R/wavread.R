@@ -10,12 +10,14 @@ wavread <- function(file_input){
   fs = data@samp.rate
   # Extract Signal from Data
   out <- data@left
+  # Demean the Data
+  out_demeaned <- demeaner(out)
   # Determine Duration of the Signal
   dur <- length(out)/fs
   # Returns a list
   # data - A matrix or vector containing the data from the input .wav or Audio file
-  # signal - A vector representing the extracted signal
+  # signal - A vector representing the extracted signal (demeaned)
   # samplingRate - A scalar corresponding to the Sampling Rate of the Signal
   # duration - A scalar corresponding to the Duration of the Signal
-  return(list(data = data, signal = out, samplingRate = fs, duration = dur))
+  return(list(data = data, signal = out_demeaned, samplingRate = fs, duration = dur))
 }
