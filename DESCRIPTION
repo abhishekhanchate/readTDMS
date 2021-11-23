@@ -4,9 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Abhishek", "Hanchate", email = "abhishek.hanchate@tamu.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package implements a set of functions that can assist in directly reading a given TDMS file in R. 
-It converts the file into a R friendly format and sub-sequent analyses for calculation of metrics are performed.
-There is also a functionality to visualize the original data stream and the derived metrics
+Description: This package implements a set of functions that can assist in directly reading a given TDMS file in R. It converts the file into a R friendly format and sub-sequent analyses for calculation of metrics are performed. There is also a functionality to visualize the original data stream and the derived metrics
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
