@@ -17,9 +17,3 @@ wavsumm <- function(file_input, plot = TRUE){
   }
 }
 
-
-
-
-
-wavread
-
