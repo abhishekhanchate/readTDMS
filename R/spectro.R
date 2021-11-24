@@ -1,8 +1,8 @@
 # Data Stream Spectrogram Function - 19th Nov 2021 - Version 1
 # Signal Processing Functions
-library(signal, warn.conflicts = F, quietly = T)
+#library(signal, warn.conflicts = F, quietly = T)
 # Image Plotting Functions and Nice Color Maps
-library(oce, warn.conflicts = F, quietly = T)
+#library(oce, warn.conflicts = F, quietly = T)
 # Spectrogram Function
 #' @title Data Stream Spectrogram Generator
 #' @description The function aims to take a data stream in a vector form and based on the

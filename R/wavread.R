@@ -1,8 +1,8 @@
 # Data Stream (.wav Format) Reading Function - 20th Nov 2021 - Version 1
 # Reading and Manipulating .wav files Functions
-library(tuneR, warn.conflicts = F, quietly = T)
+#library(tuneR, warn.conflicts = F, quietly = T)
 # Define Path to Audio File
-file_input <- '~/D/Fall 2021 Courses/STAT600_STAT_Comp/example.wav'
+#file_input <- '~/D/Fall 2021 Courses/STAT600_STAT_Comp/example.wav'
 wavread <- function(file_input){
   # Extract Data from .wav File or Audio
   data <- readWave(file_input)
