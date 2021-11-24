@@ -1,3 +1,5 @@
+# Data Stream FFT Function - 21st Nov 2021 - Version 1
+# FFT Function
 #' @title Data Stream FFT Function
 #' @description This function decomposes the data stream into its frequency components using the
 #' Fast Fourier Transform (FFT). Simply calling default FFT function in R does not give intuitive
@@ -13,9 +15,6 @@
 #'   \item img - A plot of the data in the frequency domain
 #'}
 #' @export
-#' @examples
-# Data Stream FFT Function - 21st Nov 2021 - Version 1
-# FFT Function
 wavfft <- function(data, plot = TRUE){
   datafft <- fft(data)
   # Ignore the 2nd half, which are complex conjugates of the 1st half,

@@ -1,3 +1,9 @@
+# Data Stream Spectrogram Function - 19th Nov 2021 - Version 1
+# Signal Processing Functions
+library(signal, warn.conflicts = F, quietly = T)
+# Image Plotting Functions and Nice Color Maps
+library(oce, warn.conflicts = F, quietly = T)
+# Spectrogram Function
 #' @title Data Stream Spectrogram Generator
 #' @description The function aims to take a data stream in a vector form and based on the
 #' other input parameters specified, i.e. n, Fs, window, overlap, dbON, returns a list
@@ -16,15 +22,8 @@
 #'   \item frequencystamps - A vector of frequency stamps/points associated with the data stream spectrogram
 #'   \item spectro_img - A spectrogram plot with desired input parameters for the data stream
 #'}
-#' @export
 #' @import signal, oce, ggplot
-
-# Data Stream Spectrogram Function - 19th Nov 2021 - Version 1
-# Signal Processing Functions
-library(signal, warn.conflicts = F, quietly = T)
-# Image Plotting Functions and Nice Color Maps
-library(oce, warn.conflicts = F, quietly = T)
-# Spectrogram Function
+#' @export
 spectro <- function(x, n, Fs, window, overlap, dbON){
   # Checks on dbON: Can only be 1 or 0
   if (dbON != 0 || dbON != 1){
