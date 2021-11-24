@@ -6,7 +6,6 @@
 #' data and element-wise substracts it from the entire vector
 #' @param datastream is a vector containing a one dimensional data stream
 #' @return The function returns a vector containing the demeaned data stream
-#' @import
 #' @export
 demeaner <- function(datastream){
 
