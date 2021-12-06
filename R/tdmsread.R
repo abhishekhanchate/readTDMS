@@ -6,9 +6,10 @@
 #' TDMS_Index file must be present in the same folder.
 #' @param file_input is an TDMS file Input
 #' @return The function returns a list containing:
-#' \itemize
+#' \itemize{
 #' \item datastream - A vector of data stream values based on the input TDMS file
 #' \item timestamps - A vector of time stamps associated with the datastream based on the input TDMS file
+#'}
 #' @import tdmsreader
 #' @export
 tdmsread <- function(file_input){
