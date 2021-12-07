@@ -4,7 +4,8 @@
 # Define Path to Audio File
 # file_input <- '~/D/Fall 2021 Courses/STAT600_STAT_Comp/example.wav'
 #' @title Data Stream (.wav Format) Reading Function
-#' @description The function reads in an Wav file as an input.
+#' @description The function reads in an Wav file as an input and extracts the data stream and signal
+#' as a matrix and vector respectively along with the total duration and sampling rate of the stream
 #' @param file_input is an Wav file Input
 #' @return The function returns a list containing:
 #' \itemize{
