@@ -39,6 +39,9 @@ spectro <- function(x, n, Fs, window, overlap, dbON){
   if (dbON == 1){
     P <- 10*log10(P)
   }
+  else{
+    P <- P
+  }
   # Config the Time Axis
   t <- spec$t
   # Config the Frequency Axis
@@ -59,3 +62,4 @@ spectro <- function(x, n, Fs, window, overlap, dbON){
   # spectro_img - A spectrogram plot with desired input parameters
   return(list(freq_comps = P, timestamps = t, frequencystamps = f, spectro_img = img))
 }
+
