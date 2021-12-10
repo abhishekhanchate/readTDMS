@@ -47,7 +47,7 @@ spectro <- function(x, n, Fs, window, overlap, dbON){
   # Config the Frequency Axis
   f <- spec$f
   # Plot the Spectrogram
-  img = imagep(x = t,
+  img <- imagep(x = t,
                y = f,
                z = t(P),
                col = oce.colorsViridis,
