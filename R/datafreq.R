@@ -1,4 +1,13 @@
 # Frequency Components Decomposition Function using the Fast Fourier Transform (FFT)
+#' @title Frequency Components Decomposition Function
+#' @description The function reads in a TDMS file and generates its Fast Fourier Transform (FFT). For
+#' the FFT calculation, we ignore the complex conjugates involved and only consider the Magnitudes of each
+#' complex number.
+#' @param data is an TDMS file Input
+#' @param frequencyPoints corresponds to the number of points for FFT
+#' @return The function returns the plot of the TDMS file data signal in the Frequency Domain
+#' @import tdmsreader
+#' @export
 datafreq <- function(data, frequencyPoints = 10000){
   ts <- tdmsread(data)
   ts_data <- ts$datastream
