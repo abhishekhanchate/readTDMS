@@ -22,7 +22,8 @@
 #'   \item frequencystamps - A vector of frequency stamps/points associated with the data stream spectrogram
 #'   \item spectro_img - A spectrogram plot with desired input parameters for the data stream
 #'}
-#' @import signal, ggplot
+#' @import signal
+#' @import ggplot
 #' @export
 spectro <- function(x, n, Fs, window, overlap, dbON){
   # Checks on dbON: Can only be 1 or 0
