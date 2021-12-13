@@ -10,22 +10,31 @@
 #'}
 #' @import tdmsreader
 #' @export
+#' @examples
+#' # Load the installed library/package
+#' library(readTDMS)
+#' # Open the TDMS File with specified path
+#' f <- file('tests/file.tdms', 'rb')
+#' # Call the Function to get the required plot
+#' ans <- tdmsread(f)
+#' # Datastream values
+#' ans$datastream
+#' # Timestamps
+#' ans$timestamps
+#' # Close the file if needed
+#' # Note: For any changes and rerun of about function, we need to reopen the TDMS file
+#' close(f)
 tdmsread <- function(file_input){
   # Use the imported tdmsreader library to read the TDMS file
   main <- TdmsFile$new(file_input)
-
   # Extracting the First Channel and First Module in the TDMS file
   main$read_data(file_input, 0, 1)
-
   # Taking all streams associated with above specified Module and Channel
   r <- main$objects[[ "/'Untitled'/'Dev1/ai0'"]]
-
   # Extracting the Time stamps
   t <- r$time_track(start = 0, end = 1)
-
   # Extracting the Data stream values
   s <- r$data
-
   # Returns a list
   # datastream - A vector of data stream values
   # timestamps - A vector of time stamps/points
