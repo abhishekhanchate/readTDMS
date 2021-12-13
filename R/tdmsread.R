@@ -1,4 +1,4 @@
-#' @title Data Stream (.tdms Format) Reading Function
+#' Data Stream (.tdms Format) Reading Function
 #' @description The function reads in an TDMS file as an input.
 #' The destination/folder of the file must be specified and its associated
 #' TDMS_Index file must be present in the same folder.

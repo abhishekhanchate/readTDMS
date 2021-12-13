@@ -1,4 +1,4 @@
-#' @title Frequency Components Decomposition Function
+#' Frequency Components Decomposition Function
 #' @description The function reads in a TDMS file and generates its Fast Fourier Transform (FFT). For
 #' the FFT calculation, we ignore the complex conjugates involved and only consider the Magnitudes of each
 #' complex number.
