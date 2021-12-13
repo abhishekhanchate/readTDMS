@@ -17,13 +17,13 @@
 #' # Open the TDMS File with specified path
 #' f <- file('tests/file.tdms', 'rb')
 #' # Specify required parameters
-#' frequencyPoints = 5000
+#' frequencyPoints <- 5000
 #' xlim1 <- -200
 #' xlim2 <- 1200
 #' ylim1 <- -10
 #' ylim2 <- 400
 #' # Call the Function to get the required plot
-#' ans <- datafreq(f, frequencyPoints = 10000, xlim1 = 0, xlim2 = 10000, ylim1 = -10, ylim2 = 500)
+#' ans <- datafreq(f, frequencyPoints = frequencyPoints, xlim1 = xlim1, xlim2 = xlim2, ylim1 = ylim1, ylim2 = ylim2)
 #' # Close the file if needed
 #' # Note: For any changes and rerun of about function, we need to reopen the TDMS file
 #' close(f)
