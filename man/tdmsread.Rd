@@ -21,3 +21,18 @@ The function reads in an TDMS file as an input.
 The destination/folder of the file must be specified and its associated
 TDMS_Index file must be present in the same folder.
 }
+\examples{
+# Load the installed library/package
+library(readTDMS)
+# Open the TDMS File with specified path
+f <- file('tests/file.tdms', 'rb')
+# Call the Function to get the required plot
+ans <- tdmsread(f)
+# Datastream values
+ans$datastream
+# Timestamps
+ans$timestamps
+# Close the file if needed
+# Note: For any changes and rerun of about function, we need to reopen the TDMS file
+close(f)
+}

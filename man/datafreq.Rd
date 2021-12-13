@@ -16,7 +16,15 @@ datafreq(
 \arguments{
 \item{file_input}{is an TDMS file Input}
 
-\item{frequencyPoints}{corresponds to the number of points for FFT}
+\item{frequencyPoints}{corresponds to the number of points for FFT (by default = 10000)}
+
+\item{xlim1}{specifies the lower limit for x-axis of the plot (by default = 0)}
+
+\item{xlim2}{specifies the upper limit for x-axis of the plot (by default = 10000)}
+
+\item{ylim1}{specifies the lower limit for y-axis of the plot (by default = -10)}
+
+\item{ylim2}{specifies the upper limit for y-axis of the plot (by default = 500)}
 }
 \value{
 The function returns the plot of the TDMS file data signal in the Frequency Domain
@@ -25,4 +33,21 @@ The function returns the plot of the TDMS file data signal in the Frequency Doma
 The function reads in a TDMS file and generates its Fast Fourier Transform (FFT). For
 the FFT calculation, we ignore the complex conjugates involved and only consider the Magnitudes of each
 complex number.
+}
+\examples{
+# Load the installed library/package
+library(readTDMS)
+# Open the TDMS File with specified path
+f <- file('tests/file.tdms', 'rb')
+# Specify required parameters
+frequencyPoints = 5000
+xlim1 <- -200
+xlim2 <- 1200
+ylim1 <- -10
+ylim2 <- 400
+# Call the Function to get the required plot
+ans <- datafreq(f, frequencyPoints = 10000, xlim1 = 0, xlim2 = 10000, ylim1 = -10, ylim2 = 500)
+# Close the file if needed
+# Note: For any changes and rerun of about function, we need to reopen the TDMS file
+close(f)
 }

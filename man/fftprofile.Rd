@@ -22,3 +22,8 @@ the FFT calculation, we ignore the complex conjugates involved and only consider
 complex number. After finding the frequency components, it returns a list of top frequencies based on
 specified n value
 }
+\examples{
+# Load the installed library/package
+library(readTDMS)
+
+}

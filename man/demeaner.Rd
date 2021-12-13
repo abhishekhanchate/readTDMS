@@ -17,3 +17,11 @@ The function aims to take a data stream in a vector form and returns the
 demeaned data for further analysis. In short, the function calculates the mean of the
 data and element-wise substracts it from the entire vector
 }
+\examples{
+# Load the installed library/package
+library(readTDMS)
+# Create or Import the data to be demeaned
+data <- c(runif(150))
+# Call the Function
+demeaned_data <- demeaner(data)
+}
