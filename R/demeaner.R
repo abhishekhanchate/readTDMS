@@ -11,7 +11,7 @@ demeaner <- function(datastream){
 
   # Checking for the Data Format
   dimm <- dim(datastream)
-  if (len(dimm) != 1){
+  if (length(dimm) != 1){
     stop(paste("The provided data stream cannot be demeaned since it is not a vector"))
   }
 
