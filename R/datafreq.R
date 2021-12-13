@@ -33,7 +33,7 @@ datafreq <- function(file_input, frequencyPoints = 10000, xlim1 = 0, xlim2 = 100
   amplitude <- Mod(data_fft[1:(length(data_fft)/2)])
 
   # Calculate the frequencies
-  frequency <- seq(0, frequencyPoints, (length.out=length(data_fft)/2)-1)
+  frequency <- seq(0, frequencyPoints, length.out=(length(data_fft)/2)-1)
 
   # Plot!
   img <- plot(amplitude ~ frequency, t="l", xlim = c(xlim1, xlim2), ylim = c(ylim1, ylim2))

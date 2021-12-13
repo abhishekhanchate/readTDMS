@@ -4,7 +4,14 @@
 \alias{datafreq}
 \title{Frequency Components Decomposition Function}
 \usage{
-datafreq(file_input, frequencyPoints = 10000)
+datafreq(
+  file_input,
+  frequencyPoints = 10000,
+  xlim1 = 0,
+  xlim2 = 10000,
+  ylim1 = -10,
+  ylim2 = 500
+)
 }
 \arguments{
 \item{file_input}{is an TDMS file Input}
