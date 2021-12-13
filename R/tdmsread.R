@@ -13,9 +13,6 @@
 #' @import tdmsreader
 #' @export
 tdmsread <- function(file_input){
-  #library(tdmsreader)
-  # Read in the TDMS File along with its destination
-  file_input <- file('tests/file.tdms', 'rb')
   # Use the imported tdmsreader library to read the TDMS file
   main <- TdmsFile$new(file_input)
   # Extracting the First Channel and First Module in the TDMS file
