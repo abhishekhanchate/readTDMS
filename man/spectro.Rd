@@ -4,7 +4,7 @@
 \alias{spectro}
 \title{Data Stream Spectrogram Generator}
 \usage{
-spectro(x, n, Fs, window, overlap, dbON)
+spectro(x, n = 1024, Fs, window = 256, overlap = 128)
 }
 \arguments{
 \item{x}{is a vector containing a one dimensional data stream}
@@ -13,11 +13,9 @@ spectro(x, n, Fs, window, overlap, dbON)
 
 \item{Fs}{is a integer specifying the sampling frequency}
 
-\item{window}{specifies the type of window to use for generating and plotting spectrogram}
+\item{window}{specifies the size of window to use for generating and plotting spectrogram (in points)}
 
-\item{overlap}{indicated the desired amount of overlap in the windowing process}
-
-\item{dbON}{is a Boolean indicating if we want to convert to decibels or NOT}
+\item{overlap}{indicated the desired amount of overlap in the windowing process (in points)}
 }
 \value{
 The function returns a list containing :
@@ -33,4 +31,17 @@ The function aims to take a data stream in a vector form and based on the
 other input parameters specified, i.e. n, Fs, window, overlap, dbON, returns a list
 containing a vector of frequency components, time axis vector, frequency axis vector,
 and a plot of the spectrogram
+}
+\examples{
+# Load the installed library/package
+library(readTDMS)
+# Specify required parameters
+n <- 1024
+window <- 256
+overlap <- 128
+Fs <- 1000
+# Create or Import the data to be demeaned
+data <- c(runif(10000))
+# Call the Function to get the required plot
+ans <- spectro(x = data, n = n, Fs = Fs, window = window, overlap = overlap)
 }

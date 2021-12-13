@@ -25,5 +25,14 @@ specified n value
 \examples{
 # Load the installed library/package
 library(readTDMS)
-
+# Open the TDMS File with specified path
+f <- file('tests/file.tdms', 'rb')
+# Specify required parameters
+frequencyPoints <- 10000
+n <- 10
+# Call the Function to get the top frequencies
+ans <- fftprofile(f, frequencyPoints = frequencyPoints, n = n)
+# Close the file if needed
+# Note: For any changes and rerun of about function, we need to reopen the TDMS file
+close(f)
 }
