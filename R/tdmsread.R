@@ -27,7 +27,7 @@ tdmsread <- function(file_input){
   # Extracting the Data stream values
   s <- r$data
   # Switching OFF function in case the Script runs based off a DAQ system
-  dev.off()
+  # dev.off()
   # Closing the TDMS file
   close(f)
   # Returns a list
