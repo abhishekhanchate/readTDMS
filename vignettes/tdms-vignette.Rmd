@@ -1,7 +1,7 @@
 ---
 title: "TDMS File Reader and Analyzer"
 author: "Abhishek Hanchate"
-date: 2021-12-13
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{TDMS File Reader and Analyzer}
@@ -18,13 +18,61 @@ knitr::opts_chunk$set(
 
 ## Introduction and Motivation
 
-In this vignette, we go over the readTDMS, an R-based TDMS file format reader and analyzer package which is used for reading a TDMS file and performing subsequent analyses on the extracted data stream. Not a lot of attention or consideration is given to data storage options at forefront of application planning and data storage. Decisions are often made arbitrarily on an as-needed, per-application basis without much thought to reusability, scalability, and recyclability or reproducibility, which leads to tedious and costly software rearchitecture. Given that applications and requirements change over time, even the most popular file storing formats quickly fall short of meeting the demands of engineers and scientists storing time-based measurement data. This is especially common in fields such as smart manufacturing, IoT, and healthcare, wherein large amounts of data is generated without much metadata associated with it. 
+In this vignette, we go over the readTDMS package, an R-based TDMS file format reader and analyzer, which is used for reading an TDMS file and performing subsequent analyses on the extracted data streams from the file. Not a lot of attention or consideration is given to data storage options at forefront of application planning and data storage. Decisions are often made arbitrarily on an as-needed, per-application basis without much thought to reusability, scalability, and recyclability or reproducibility, which leads to tedious and costly software rearchitecture. Given that applications and requirements change over time, even the most popular file storing formats quickly fall short of meeting the demands of engineers and scientists storing time-based measurement data. This is especially common in fields such as smart manufacturing, IoT, and healthcare, wherein large amounts of data is generated without much metadata associated with it. 
 
 ## NI TDMS Format
 
-An NI TDMS (National Instruments Technical Data Management Streaming) file format is used for saving well-documented measurement data which is stored in the most efficient, organized, and scalable fashion to disk. Given the fairly complex binary format, these files are often difficult to directly read in R. This package lets us test the use of R for data processing requirements without changing anything with the data acquisition process. Also, having this direct reading process assists in reducing barriers to others trying to use R for such a purpose. The package will have a dependency on [tdmsreader](https://github.com/msuefishlab/tdmsreader) by [msuefishlab](https://github.com/msuefishlab) and contains further analyses and functionalities such as frequency domain visuals as well as time-frequency domain spectral plots. 
+An NI TDMS (National Instruments Technical Data Management Streaming) file format is used for saving well-documented measurement data which is stored in the most efficient, organized, and scalable fashion to disk. For example, a typical TDMS file can store the same amount of data in about one-fourth disk space as compared to that required by an Microsoft Excel file. Given its structured and binary format nature, each type of measurement is stored in its own channel. Every channel belongs to a certain channel group and a given TDMS file can contain several such groups of multiple channels. At each of these levels, I can assign properties which keep a track of the associated metadata. This complex yet useful structure boosts traceability and lets us search for relevant data and track any problems that pop up. Given the binary format storage, TDMS files tend to be fast to read with no loss in precision for a data stream. The figure below gives us an example of a TDMS structure.
 
+\
+```{r echo=FALSE, out.width='85%', fig.align="center"}
+knitr::include_graphics('./media/tdms_structure.png')
+```
+\
+
+Given the fairly complex binary format, these files are often difficult to directly read in R. This package lets us test the use of R for data processing requirements without changing anything with the data acquisition process. Also, having this direct reading process assists in reducing barriers to others trying to use R for such a purpose. The package will have a dependency on [tdmsreader](https://github.com/msuefishlab/tdmsreader) by [msuefishlab](https://github.com/msuefishlab) and contains further analyses and functionalities such as frequency domain visuals as well as time-frequency domain spectral plots. 
+
+## Source Code
+
+https://github.com/abhishekhanchate/readTDMS
+
+## Installation Guide and Troubleshooting
+
+readTDMS is designed as an R package and we can install it from GitHub via:
+
+```{r, eval = FALSE}
+devtools::install_github("abhishekhanchate/readTDMS")
+```
+
+In case of errors, please make sure that you have devtools installed as well. If not, you can install it and then install readTDMS using:
+
+```{r, eval = FALSE}
+install.packages('devtools')
+devtools::install_github("abhishekhanchate/readTDMS")
+```
+
+## Potential Windows Installation Errors
+
+Sometimes, the install\_github function doesn’t work properly on Windows as it fails to install some of the dependencies. So, you may have to install them manually. Possible dependencies include the following:
+
+```{r, eval=FALSE}
+install.packages(c('tdmsreader', 'tuneR', 'signal', 'ggplot2'))
+```
+
+Note that this is only a problem on windows, other platforms should install all dependencies automatically when you use:
+\
+`devtools::install_github('abhishekhanchate/readTDMS')` 
+\
+or
+\
+`install_github('abhishekhanchate/readTDMS')`
+
+## Using readTDMS
+
+Once readTDMS package has been installed, you can run it by running:
 
 ```{r setup}
 library(readTDMS)
 ```
+
+
