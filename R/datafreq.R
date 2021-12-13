@@ -8,7 +8,7 @@
 #' @return The function returns the plot of the TDMS file data signal in the Frequency Domain
 #' @import tdmsreader
 #' @export
-datafreq <- function(file_input, frequencyPoints = 10000){
+datafreq <- function(file_input, frequencyPoints = 10000, xlim1 = 0, xlim2 = 10000, ylim1 = -10, ylim2 = 500){
 
   # Use the imported tdmsreader library to read the TDMS file
   main <- TdmsFile$new(file_input)
@@ -33,10 +33,10 @@ datafreq <- function(file_input, frequencyPoints = 10000){
   amplitude <- Mod(data_fft[1:(length(data_fft)/2)])
 
   # Calculate the frequencies
-  frequency <- seq(0, frequencyPoints, length.out=length(data_fft)/2)
+  frequency <- seq(0, frequencyPoints, (length.out=length(data_fft)/2)-1)
 
   # Plot!
-  img <- plot(amplitude ~ frequency, t="l")
+  img <- plot(amplitude ~ frequency, t="l", xlim = c(xlim1, xlim2), ylim = c(ylim1, ylim2))
 
   # Return the Plot of TS data in the Frequency Domain
   return(img)

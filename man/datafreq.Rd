@@ -4,10 +4,10 @@
 \alias{datafreq}
 \title{Frequency Components Decomposition Function}
 \usage{
-datafreq(data, frequencyPoints = 10000)
+datafreq(file_input, frequencyPoints = 10000)
 }
 \arguments{
-\item{data}{is an TDMS file Input}
+\item{file_input}{is an TDMS file Input}
 
 \item{frequencyPoints}{corresponds to the number of points for FFT}
 }
