@@ -1,0 +1,19 @@
+---
+title: "TDMS File Reader and Analyzer"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{TDMS File Reader and Analyzer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(readTDMS)
+```
