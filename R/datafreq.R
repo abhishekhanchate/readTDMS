@@ -15,6 +15,7 @@
 #'   \item img - A plot of the TDMS file data signal in the frequency domain
 #'}
 #' @import tdmsreader
+#' @importFrom stats fft
 #' @export
 #' @examples
 #' # Load the installed library/package

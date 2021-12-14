@@ -8,6 +8,7 @@
 #' @param n corresponds to the number of Top Frequencies to be returned
 #' @return a list of Top frequencies associated with the TDMS file data signal in the Frequency Domain
 #' @import tdmsreader
+#' @importFrom stats fft
 #' @export
 #' @examples
 #' # Load the installed library/package

@@ -43,7 +43,7 @@ complex number.
 # Load the installed library/package
 library(readTDMS)
 # Open the TDMS File with specified path
-f <- file('tests/file.tdms', 'rb')
+f <- file('./vignettes/data/file.tdms', 'rb')
 # Specify required parameters
 frequencyPoints <- 5000
 xlim1 <- -200
