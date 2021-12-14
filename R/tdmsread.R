@@ -3,10 +3,12 @@
 #' The destination/folder of the file must be specified and its associated
 #' TDMS_Index file must be present in the same folder.
 #' @param file_input is an TDMS file Input
+#' @param plot is a boolean indicating if plotting is desired
 #' @return The function returns a list containing:
 #' \itemize{
 #' \item datastream - A vector of data stream values based on the input TDMS file
 #' \item timestamps - A vector of time stamps associated with the datastream based on the input TDMS file
+#' \item summ - The summary of the extracted data stream
 #'}
 #' @import tdmsreader
 #' @export
@@ -24,7 +26,7 @@
 #' # Close the file if needed
 #' # Note: For any changes and rerun of about function, we need to reopen the TDMS file
 #' close(f)
-tdmsread <- function(file_input){
+tdmsread <- function(file_input, plot = TRUE){
   # Use the imported tdmsreader library to read the TDMS file
   main <- TdmsFile$new(file_input)
   # Extracting the First Channel and First Module in the TDMS file
@@ -35,11 +37,14 @@ tdmsread <- function(file_input){
   t <- r$time_track(start = 0, end = 1)
   # Extracting the Data stream values
   s <- r$data
+  # Get the Summary Statistics of the Signal
+  summ <- summary(s)
+  if (plot == TRUE){
+    # Plot a Line Plot representing the demeaned Signal
+    img <- plot(s, t="l")}
   # Returns a list
   # datastream - A vector of data stream values
   # timestamps - A vector of time stamps/points
-  return(list(datastream = s, timestamps = t))
+  return(list(datastream = s, timestamps = t, summ = summ))
 }
-
-
 
