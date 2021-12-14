@@ -2,7 +2,7 @@
 title: "TDMS File Reader and Analyzer"
 author: "Abhishek Hanchate"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: pdf_document
 vignette: >
   %\VignetteIndexEntry{TDMS File Reader and Analyzer}
   %\VignetteEngine{knitr::rmarkdown}
