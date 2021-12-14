@@ -14,7 +14,7 @@
 #' # Load the installed library/package
 #' library(readTDMS)
 #' # Open the TDMS File with specified path
-#' f <- file('../vignettes/data/file.tdms', 'rb')
+#' f <- file('~/readTDMS/vignettes/data/file.tdms', 'rb')
 #' # Specify required parameters
 #' frequencyPoints <- 10000
 #' n <- 10

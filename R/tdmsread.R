@@ -17,7 +17,7 @@
 #' # Load the installed library/package
 #' library(readTDMS)
 #' # Open the TDMS File with specified path
-#' f <- file('../vignettes/data/file.tdms', 'rb')
+#' f <- file('~/readTDMS/vignettes/data/file.tdms', 'rb')
 #' # Call the Function to get the required plot
 #' ans <- tdmsread(f)
 #' # Datastream values
