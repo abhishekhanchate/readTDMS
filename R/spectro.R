@@ -17,7 +17,7 @@
 #'}
 #' @import signal
 #' @import ggplot2
-#' @import oce
+#' @importFrom oce imagep
 #' @export
 #' @examples
 #' # Load the installed library/package
