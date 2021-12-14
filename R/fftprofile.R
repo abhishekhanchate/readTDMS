@@ -4,9 +4,9 @@
 #' complex number. After finding the frequency components, it returns a list of top frequencies based on
 #' specified n value
 #' @param data is an TDMS file Input
-#' @param frequencyPoints corresponds to the number of points for FFT
-#' @param n corresponds to the number of Top Frequencies to be returned
-#' @return a list of Top frequencies associated with the TDMS file data signal in the Frequency Domain
+#' @param frequencyPoints corresponds to the number of points for FFT (integer)
+#' @param n corresponds to the number of Top Frequencies to be returned (integer)
+#' @return a list/vector of Top frequencies associated with the TDMS file data signal in the Frequency Domain
 #' @import tdmsreader
 #' @importFrom stats fft
 #' @export

@@ -6,8 +6,8 @@
 #' @param x is a vector containing a one dimensional data stream
 #' @param n is a integer (dyadic preferred) specifying the number of nfft points
 #' @param Fs is a integer specifying the sampling frequency
-#' @param window specifies the size of window to use for generating and plotting spectrogram (in points)
-#' @param overlap indicated the desired amount of overlap in the windowing process (in points)
+#' @param window specifies the size of window to use for generating and plotting spectrogram (in points)(integer)
+#' @param overlap indicated the desired amount of overlap in the windowing process (in points)(integer)
 #' @return The function returns a list containing :
 #'   \itemize{
 #'   \item freq_comps - A vector of normalized frequency components associated with the data stream

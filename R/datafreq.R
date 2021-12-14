@@ -3,11 +3,11 @@
 #' the FFT calculation, we ignore the complex conjugates involved and only consider the Magnitudes of each
 #' complex number.
 #' @param file_input is an TDMS file Input
-#' @param frequencyPoints corresponds to the number of points for FFT (by default = 10000)
-#' @param xlim1 specifies the lower limit for x-axis of the plot (by default = 0)
-#' @param xlim2 specifies the upper limit for x-axis of the plot (by default = 10000)
-#' @param ylim1 specifies the lower limit for y-axis of the plot (by default = -10)
-#' @param ylim2 specifies the upper limit for y-axis of the plot (by default = 500)
+#' @param frequencyPoints corresponds to the number of points for FFT (by default = 10000) (scalar)
+#' @param xlim1 specifies the lower limit for x-axis of the plot (by default = 0) (scalar)
+#' @param xlim2 specifies the upper limit for x-axis of the plot (by default = 10000) (scalar)
+#' @param ylim1 specifies the lower limit for y-axis of the plot (by default = -10) (scalar)
+#' @param ylim2 specifies the upper limit for y-axis of the plot (by default = 500) (scalar)
 #' @return The function returns a list containing :
 #'   \itemize{
 #'   \item data_FFT - A vector of frequency components associated with the data stream
