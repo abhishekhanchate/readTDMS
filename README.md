@@ -6,65 +6,99 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of readTDMS is to first of all to read in data stream in an NI
-TDMS (National Instruments Technical Data Management Streaming) file
-format and to test the use of R for data processing requirements without
-making any modifications in the data acquisition procedure. The package
-provides an intuitive output in the form of a data stream or a time
-series. It also provides means to perform subsequent analyses such as
-analysis of the time series data in the time domain, frequency domain,
-and time-frequency domain along with important metrics and visual plots
+The goal of [readTDMS](https://github.com/abhishekhanchate/readTDMS) is
+to first of all to read in data stream in an NI TDMS (National
+Instruments Technical Data Management Streaming) file format and to test
+the use of R for data processing requirements without making any
+modifications in the data acquisition procedure. The package provides an
+intuitive output in the form of a data stream or a time series. It also
+provides means to perform subsequent analyses such as analysis of the
+time series data in the time domain, frequency domain, and
+time-frequency domain along with important metrics and visual plots.
 
 ## Installation
 
-You can install the development version of readTDMS from
-[GitHub](https://github.com/) with:
+[readTDMS](https://github.com/abhishekhanchate/readTDMS) is designed as
+an R package and we can install it from GitHub via:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("abhishekhanchate/readTDMS")
 ```
 
-## Yet to do in Project
+## Potential Windows Installation Errors
 
-I still have to finalize the current function and update their
-documentation with respect to Roxygen skeleton. I will also work on
-adding in more functions based around other already available libraries
-and augment useful aspects of it. I am still arguing about the use of
-C++ in my package and as of now I am leaning more towards Vignette.
+Sometimes, the install_github function doesn’t work properly on Windows
+as it fails to install some of the dependencies. So, you may have to
+install them manually. Possible dependencies include the following:
+
+``` r
+install.packages(c('tdmsreader', 'oce', 'signal', 'ggplot2'))
+```
+
+Note that this is only a problem on windows, other platforms should
+install all dependencies automatically when you use:  
+`devtools::install_github('abhishekhanchate/readTDMS')`  
+or  
+`install_github('abhishekhanchate/readTDMS')`
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+We demonstrate the functionalities of the package
+[readTDMS](https://github.com/abhishekhanchate/readTDMS) in reading and
+analyzing data streams coming from a TDMS file. The first step after
+installing and importing the library is to read a TDMS file from a given
+repository/directory. (Note: The TDMS_Index file associated with the
+TDMS file must also be present in the same folder)  
+  
+Now, by using the tdmsread() function, we can read in the required TDMS
+file. This function provides us with the extracted data stream in form
+of the amplitude values of the data as well as the timestamps associated
+with it. We also get a brief summary of the data stream along with an
+optional (by default, False) visual into the time domain illustration.
 
 ``` r
-## library(readTDMS)
-## basic example code
+library(readTDMS)
+#> Loading required package: tdmsreader
+## Basic Example Code
+f <- file('./vignettes/data/file.tdms', 'rb')
+out <- tdmsread(f, plot = TRUE)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="vignettes/media/README-example-1.png" width="100%" style="display: block; margin: auto;" />
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+head(out$datastream, n = 15)
+#>  [1] 0.01800260 0.01964717 0.01668694 0.01833151 0.01701586 0.01767369
+#>  [7] 0.01800260 0.01602911 0.01833151 0.01800260 0.01635803 0.01898934
+#> [13] 0.01931826 0.01635803 0.01701586
+head(out$timestamps, n = 15)
+#>  [1] 0.00001 0.00002 0.00003 0.00004 0.00005 0.00006 0.00007 0.00008 0.00009
+#> [10] 0.00010 0.00011 0.00012 0.00013 0.00014 0.00015
+out$summ
+#>       Min.    1st Qu.     Median       Mean    3rd Qu.       Max. 
+#> -0.1046824  0.0002412  0.0032015  0.0040188  0.0058328  0.5172946
+close(f)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+For more detailed introduction to the package, please refer
+[here](https://github.com/abhishekhanchate/readTDMS/blob/master/vignettes/tdms-vignette.pdf)
+for more details.  
+  
+If you encounter any issue with the package, please feel free to file
+and issue.
 
-You can also embed plots, for example:
+## Notes
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+This package only supports a subset of the TDMS spec and has been tested
+on single channel 32-bit float data stream.  
+  
+Feedback is welcomed!
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+## Credit
+
+This package relies on the initial direct reading functionality on the R
+package, [tdmsreader](https://github.com/msuefishlab/tdmsreader), which
+in-turn is a port of the Python package,
+[npTDMS](https://github.com/adamreeve/npTDMS), into R and shares the
+same LGPL license.
