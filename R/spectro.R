@@ -18,6 +18,7 @@
 #' @import signal
 #' @import ggplot2
 #' @importFrom oce imagep
+#' @importFrom oce oceColorsViridis
 #' @export
 #' @examples
 #' # Load the installed library/package
