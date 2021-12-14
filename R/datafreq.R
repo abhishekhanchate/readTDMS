@@ -51,7 +51,7 @@ datafreq <- function(file_input, frequencyPoints = 10000, xlim1 = 0, xlim2 = 100
   # Calculate the frequencies
   frequency <- seq(0, frequencyPoints, length.out=(length(data_fft)/2)-1)
   # Plot!
-  img <- plot(amplitude ~ frequency, t="l", xlim = c(xlim1, xlim2), ylim = c(ylim1, ylim2))
+  img <- plot(amplitude ~ frequency, t="l", xlim = c(xlim1, xlim2), ylim = c(ylim1, ylim2), main = "Frequency Domain Plot", xlab = "Frequency [Hz]", ylab = "Amplitude", col = "blue")
   # Return the Plot of TS data in the Frequency Domain
   return(list(freq_comps = amplitude, frequency = frequency, img = img))
 }

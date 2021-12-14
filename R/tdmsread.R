@@ -41,7 +41,7 @@ tdmsread <- function(file_input, plot = TRUE){
   summ <- summary(s)
   if (plot == TRUE){
     # Plot a Line Plot representing the demeaned Signal
-    img <- plot(s, t="l")}
+    img <- plot(s, t="l", main = "Time Domain Plot", xlab = "Timestamps/Samples", ylab = "Amplitude", col = "blue")}
   # Returns a list
   # datastream - A vector of data stream values
   # timestamps - A vector of time stamps/points

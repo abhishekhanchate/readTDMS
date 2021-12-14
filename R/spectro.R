@@ -58,7 +58,8 @@ spectro <- function(x, n = 1024, Fs, window = 256, overlap = 128){
                ylab = 'Frequency [Hz]',
                xlab = 'Time [s]',
                drawPalette = T,
-               decimate = F)
+               decimate = F,
+               main = "Time-Frequency Domain Plot")
   # Returns a list
   # freq_comps - A vector of normalized frequency components
   # timestamps - A vector of time stamps/points
