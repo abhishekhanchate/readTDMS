@@ -9,6 +9,7 @@
 #' \item datastream - A vector of data stream values based on the input TDMS file
 #' \item timestamps - A vector of time stamps associated with the datastream based on the input TDMS file
 #' \item summ - The summary of the extracted data stream
+#' \item img - The Time domain plot of the data stream
 #'}
 #' @import tdmsreader
 #' @export
@@ -26,7 +27,7 @@
 #' # Close the file if needed
 #' # Note: For any changes and rerun of about function, we need to reopen the TDMS file
 #' close(f)
-tdmsread <- function(file_input, plot = TRUE){
+tdmsread <- function(file_input, plot = FALSE){
   # Use the imported tdmsreader library to read the TDMS file
   main <- TdmsFile$new(file_input)
   # Extracting the First Channel and First Module in the TDMS file
@@ -45,6 +46,6 @@ tdmsread <- function(file_input, plot = TRUE){
   # Returns a list
   # datastream - A vector of data stream values
   # timestamps - A vector of time stamps/points
-  return(list(datastream = s, timestamps = t, summ = summ))
+  return(list(datastream = s, timestamps = t, summ = summ, img = img))
 }
 
