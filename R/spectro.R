@@ -15,10 +15,9 @@
 #'   \item frequencystamps - A vector of frequency stamps/points associated with the data stream spectrogram
 #'   \item spectro_img - A spectrogram plot with desired input parameters for the data stream
 #'}
-#' @import signal
+#' @importFrom signal specgram
 #' @import ggplot2
-#' @importFrom oce imagep
-#' @importFrom oce oceColorsViridis
+#' @import oce
 #' @export
 #' @examples
 #' # Load the installed library/package
