@@ -27,7 +27,12 @@ datafreq(
 \item{ylim2}{specifies the upper limit for y-axis of the plot (by default = 500)}
 }
 \value{
-The function returns the plot of the TDMS file data signal in the Frequency Domain
+The function returns a list containing :
+\itemize{
+\item data_FFT - A vector of frequency components associated with the data stream
+\item frequency - A vector of frequencies associated with FFT on data stream
+\item img - A plot of the TDMS file data signal in the frequency domain
+}
 }
 \description{
 The function reads in a TDMS file and generates its Fast Fourier Transform (FFT). For

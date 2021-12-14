@@ -1,6 +1,6 @@
 Package: readTDMS
 Title: R-based TDMS file format reader and analyzer
-Version: 0.3.00
+Version: 0.4.00
 Authors@R: 
     person("Abhishek", "Hanchate", email = "abhishek.hanchate@tamu.edu", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -10,7 +10,7 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Imports: ggplot2, signal, tdmsreader, tuneR
+Imports: ggplot2, signal, tdmsreader, oce
 Remotes: msuefishlab/tdmsreader
 Suggests: 
     rmarkdown,

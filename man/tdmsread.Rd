@@ -4,16 +4,19 @@
 \alias{tdmsread}
 \title{Data Stream (.tdms Format) Reading Function}
 \usage{
-tdmsread(file_input)
+tdmsread(file_input, plot = TRUE)
 }
 \arguments{
 \item{file_input}{is an TDMS file Input}
+
+\item{plot}{is a boolean indicating if plotting is desired}
 }
 \value{
 The function returns a list containing:
 \itemize{
 \item datastream - A vector of data stream values based on the input TDMS file
 \item timestamps - A vector of time stamps associated with the datastream based on the input TDMS file
+\item summ - The summary of the extracted data stream
 }
 }
 \description{
