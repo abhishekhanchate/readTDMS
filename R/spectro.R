@@ -32,6 +32,10 @@
 #' # Call the Function to get the required plot
 #' ans <- spectro(x = data, n = n, Fs = Fs, window = window, overlap = overlap)
 spectro <- function(x, n = 1024, Fs, window = 256, overlap = 128){
+  # Check conditions
+  if (overlap >= window){
+    stop(paste("Overlap cannot be greater than or equal to window size"))
+  }
   # Demean the data stream vector
   x_demeaned <- demeaner(x)
   # Generate Spectrogram
