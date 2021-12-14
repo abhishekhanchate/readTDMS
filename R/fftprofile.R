@@ -38,5 +38,6 @@ fftprofile <- function(data, frequencyPoints = 10000, n){
   # Select the indices for the top n frequencies
   top <- sorted$ix[1:n] # indexes of the largest n components
   # Return the top n frequencies associated with the data stream from the TDMS file
-  return (frequency[top]) # convert indexes to frequencies
+  ans <- frequency[top] # convert indexes to frequencies
+  return (ans)
 }
