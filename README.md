@@ -95,7 +95,7 @@ and issue.
 This package only supports a subset of the TDMS spec and has been tested
 on single channel 32-bit float data stream.  
   
-Feedback is welcomed!
+Feedback is welcomed! Please feel free to raise an issue.
 
 ## Credit
 
