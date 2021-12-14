@@ -56,7 +56,7 @@ devtools::install_github("abhishekhanchate/readTDMS")
 Sometimes, the install\_github function doesn’t work properly on Windows as it fails to install some of the dependencies. So, you may have to install them manually. Possible dependencies include the following:
 
 ```{r, eval=FALSE}
-install.packages(c('tdmsreader', 'tuneR', 'signal', 'ggplot2'))
+install.packages(c('tdmsreader', 'oce', 'signal', 'ggplot2'))
 ```
 
 Note that this is only a problem on windows, other platforms should install all dependencies automatically when you use:
