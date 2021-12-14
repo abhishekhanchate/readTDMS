@@ -23,14 +23,15 @@ an R package and we can install it from GitHub via:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("abhishekhanchate/readTDMS")
+devtools::install_github("abhishekhanchate/readTDMS", build_vignettes = TRUE)
 ```
 
 ## Potential Windows Installation Errors
 
-Sometimes, the install_github function doesn’t work properly on Windows
-as it fails to install some of the dependencies. So, you may have to
-install them manually. Possible dependencies include the following:
+Sometimes, the `install_github` function doesn’t work properly on
+Windows as it fails to install some of the dependencies. So, you may
+have to install them manually. Possible dependencies include the
+following:
 
 ``` r
 install.packages(c('tdmsreader', 'oce', 'signal', 'ggplot2'))
@@ -40,7 +41,7 @@ Note that this is only a problem on windows, other platforms should
 install all dependencies automatically when you use:  
 `devtools::install_github('abhishekhanchate/readTDMS')`  
 or  
-`install_github('abhishekhanchate/readTDMS')`
+`library(devtools)` `install_github('abhishekhanchate/readTDMS')`
 
 ## Example
 
@@ -51,11 +52,12 @@ installing and importing the library is to read a TDMS file from a given
 repository/directory. (Note: The TDMS_Index file associated with the
 TDMS file must also be present in the same folder)  
   
-Now, by using the tdmsread() function, we can read in the required TDMS
-file. This function provides us with the extracted data stream in form
-of the amplitude values of the data as well as the timestamps associated
-with it. We also get a brief summary of the data stream along with an
-optional (by default, False) visual into the time domain illustration.
+Now, by using the `tdmsread()` function, we can read in the required
+TDMS file. This function provides us with the extracted data stream in
+form of the amplitude values of the data as well as the timestamps
+associated with it. We also get a brief summary of the data stream along
+with an optional (by default, False) visual into the time domain
+illustration.
 
 ``` r
 library(readTDMS)
