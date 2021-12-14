@@ -9,12 +9,12 @@ fftprofile(data, frequencyPoints = 10000, n)
 \arguments{
 \item{data}{is an TDMS file Input}
 
-\item{frequencyPoints}{corresponds to the number of points for FFT}
+\item{frequencyPoints}{corresponds to the number of points for FFT (integer)}
 
-\item{n}{corresponds to the number of Top Frequencies to be returned}
+\item{n}{corresponds to the number of Top Frequencies to be returned (integer)}
 }
 \value{
-a list of Top frequencies associated with the TDMS file data signal in the Frequency Domain
+a list/vector of Top frequencies associated with the TDMS file data signal in the Frequency Domain
 }
 \description{
 The function reads in a TDMS file and generates its Fast Fourier Transform (FFT). For

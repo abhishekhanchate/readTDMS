@@ -13,9 +13,9 @@ spectro(x, n = 1024, Fs, window = 256, overlap = 128)
 
 \item{Fs}{is a integer specifying the sampling frequency}
 
-\item{window}{specifies the size of window to use for generating and plotting spectrogram (in points)}
+\item{window}{specifies the size of window to use for generating and plotting spectrogram (in points)(integer)}
 
-\item{overlap}{indicated the desired amount of overlap in the windowing process (in points)}
+\item{overlap}{indicated the desired amount of overlap in the windowing process (in points)(integer)}
 }
 \value{
 The function returns a list containing :

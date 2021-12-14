@@ -16,15 +16,15 @@ datafreq(
 \arguments{
 \item{file_input}{is an TDMS file Input}
 
-\item{frequencyPoints}{corresponds to the number of points for FFT (by default = 10000)}
+\item{frequencyPoints}{corresponds to the number of points for FFT (by default = 10000) (scalar)}
 
-\item{xlim1}{specifies the lower limit for x-axis of the plot (by default = 0)}
+\item{xlim1}{specifies the lower limit for x-axis of the plot (by default = 0) (scalar)}
 
-\item{xlim2}{specifies the upper limit for x-axis of the plot (by default = 10000)}
+\item{xlim2}{specifies the upper limit for x-axis of the plot (by default = 10000) (scalar)}
 
-\item{ylim1}{specifies the lower limit for y-axis of the plot (by default = -10)}
+\item{ylim1}{specifies the lower limit for y-axis of the plot (by default = -10) (scalar)}
 
-\item{ylim2}{specifies the upper limit for y-axis of the plot (by default = 500)}
+\item{ylim2}{specifies the upper limit for y-axis of the plot (by default = 500) (scalar)}
 }
 \value{
 The function returns a list containing :
