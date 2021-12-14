@@ -8,7 +8,12 @@
 #' @param xlim2 specifies the upper limit for x-axis of the plot (by default = 10000)
 #' @param ylim1 specifies the lower limit for y-axis of the plot (by default = -10)
 #' @param ylim2 specifies the upper limit for y-axis of the plot (by default = 500)
-#' @return The function returns the plot of the TDMS file data signal in the Frequency Domain
+#' @return The function returns a list containing :
+#'   \itemize{
+#'   \item data_FFT - A vector of frequency components associated with the data stream
+#'   \item frequency - A vector of frequencies associated with FFT on data stream
+#'   \item img - A plot of the TDMS file data signal in the frequency domain
+#'}
 #' @import tdmsreader
 #' @export
 #' @examples
@@ -48,5 +53,5 @@ datafreq <- function(file_input, frequencyPoints = 10000, xlim1 = 0, xlim2 = 100
   # Plot!
   img <- plot(amplitude ~ frequency, t="l", xlim = c(xlim1, xlim2), ylim = c(ylim1, ylim2))
   # Return the Plot of TS data in the Frequency Domain
-  return(img)
+  return(list(freq_comps = amplitude, frequency = frequency, img = img))
 }
