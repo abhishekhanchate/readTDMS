@@ -4,7 +4,7 @@
 \alias{tdmsread}
 \title{Data Stream (.tdms Format) Reading Function}
 \usage{
-tdmsread(file_input, plot = TRUE)
+tdmsread(file_input, plot = FALSE)
 }
 \arguments{
 \item{file_input}{is an TDMS file Input}
@@ -17,6 +17,7 @@ The function returns a list containing:
 \item datastream - A vector of data stream values based on the input TDMS file
 \item timestamps - A vector of time stamps associated with the datastream based on the input TDMS file
 \item summ - The summary of the extracted data stream
+\item img - The Time domain plot of the data stream
 }
 }
 \description{

@@ -83,13 +83,15 @@ We demonstrate the functionalities of the package [readTDMS](https://github.com/
 f <- file('./data/file.tdms', 'rb')
 ```
 
-Now, by using the tdmsread() function, we can read in the required TDMS file. This function provides us with the extracted data stream in form of the amplitude values of the data as well as the timestamps associated with it. We also get a brief summary of the data stream along with an optional (by default, True) visual into the time domain illustration.
+Now, by using the tdmsread() function, we can read in the required TDMS file. This function provides us with the extracted data stream in form of the amplitude values of the data as well as the timestamps associated with it. We also get a brief summary of the data stream along with an optional (by default, False) visual into the time domain illustration.
 
 ```{r}
 out <- tdmsread(f)
 head(out$datastream, n = 10)
 head(out$timestamps, n = 10)
 out$summ
+out$img
+close(f)
 ```
 
 
