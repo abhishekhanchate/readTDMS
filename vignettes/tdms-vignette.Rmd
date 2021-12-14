@@ -109,6 +109,31 @@ The top frequency components can then be extracted as below:
 ```{r}
 f <- file('./data/file.tdms', 'rb')
 top_freq <- fftprofile(f, frequencyPoints = 10000, n = 25) # Top 25 Frequencies
+top_freq
+close(f)
+```
+
+Similarly, we can get into the Time-frequency domain features associated with the data stream. However, it is usually advisable to first demean your data stream to get rid of any unwanted trend associated with it. We do so as illustrated by example below:
+
+```{r}
+f <- file('./data/file.tdms', 'rb')
+out <- tdmsread(f, plot = FALSE)
+data <- out$datastream
+data_demeaned <- demeaner(data)
+mean(data)
+mean(data_demeaned)
+close(f)
+```
+It is clear from the above mean values that we have accomplished what we wanted to do. Now, we can work on extracting the desired Time-frequency domain features.
+
+```{r}
+f <- file('./data/file.tdms', 'rb')
+out <- tdmsread(f, plot = FALSE)
+data <- out$datastream
+time_freq_out <- spectro(x = data, n = 1024, Fs = 1000, window = 256, overlap = 128)
+time_freq_out$freq_comps[1:5, 1:5]
+head(time_freq_out$timestamps, n = 5)
+head(time_freq_out$frequencystamps, n = 5)
 close(f)
 ```
 
